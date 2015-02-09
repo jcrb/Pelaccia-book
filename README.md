@@ -8,7 +8,7 @@ JcB: quelles sont les bases scientifiques à posséder pour encadrer un travail 
  
 Représenter les données: notion UTF8
 
-Une des premières tâches dans un projet de recherche est de savoir comment recueillir et stocker ses données de manière vintelligible et effiviente:
+Une des premières tâches dans un projet de recherche est de savoir comment recueillir et stocker ses données de manière intelligible et efficiente:
 - intelligible: comprendre de ce que l'on a fait plusieurs mois plus tard
 - efficiente: 80% du temps nécessaire au traitement statistique des données est consacré à nettoyer les données (#ref)
 
