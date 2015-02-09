@@ -12,6 +12,7 @@ Une des premières tâches dans un projet de recherche est de savoir comment rec
 - intelligible: comprendre de ce que l'on a fait plusieurs mois plus tard
 - efficiente: 80% du temps nécessaire au traitement statistique des données est consacré à nettoyer les données (#ref)
 
+Règle 1: le support de saisie doit servir uniquement à cette tâche et rien d'autre.
 
 Référence:
 
