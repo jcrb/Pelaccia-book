@@ -16,6 +16,10 @@ Règle 1: le support de saisie doit servir uniquement à cette tâche et rien d'
 
 Les données nettoyées: ce sont typiquement celles que l'on trouve dans les exemples des ouvrages de référence. Elles sont "parfaites" en ce sens qu"elles peuvent être importée dans un logiciel de statistique et traitées immédiatement sans que le progrmme de génère une erreur. L'objectf est que vos donnnées soient "parfaites". Hélas dans la vraie vie rien n'est parfait et il est rare q'un logiciels accepte sans broncher vos données.
 
+Les données manquantes
+----------------------
+Des données peuvent mnquer pour de nombreuses raisons. La plupart des logiciels acceptent le symbole NA (pour not avalaible) pour désigner une valeur manquante. Pour obtenir un vecteur de valeurs non manquantes: x[!is.na(x)].
+
 Référence:
 
 [Sharing Clinical Research Data: Workshop Summary](http://www.nap.edu/catalog/18267/sharing-clinical-research-data-workshop-summary). Accédé le 7/2/2015
