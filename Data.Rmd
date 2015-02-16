@@ -1,0 +1,55 @@
+---
+title: "Superviser un étudiant dans son travail de recherche"
+author: "jcb"
+date: "10 février 2015"
+output: html_document
+---
+
+Introduction
+============
+
+[A summary of the evidence that most published research is false](http://simplystatistics.org/2013/12/16/a-summary-of-the-evidence-that-most-published-research-is-false/)
+
+Organiser son travail
+=====================
+Stafford Noble W. [A quick Guide to Organizing Computational Biology Projects](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424). PLOS Comp. Biol. (2009) __5__(7). Accédé le 10/2/2015.
+
+Un [script](https://github.com/chendaniely/computational-project-cookie-cutter) pour implémenter automatiquement la structure proposée dans l'article de Stafford Noble.
+
+Saisir les données
+==================
+
+Faut-il utiliser un tableur ou un logiciel de statistiques pour saisir les données ? [Luis A. Apiolaza ](http://http://www.quantumforest.com/2013/12/excel-fanaticism-and-r/)
+
+Anatomie d'un tableur
+-----------------------
+[Manuel Genstat](http://www.ilri.org/rmg/RMGcd/DataAnalysisAgroforestry/Materials/Other%20documents/GenstatManual.pdf)
+
+Divers
+======
+
+Organiser le versionning
+------------------------
+
+[Git](http://git-scm.com/book/fr/) et Github.
+
+Git-les bases pourbbien gérer les versions de votre projet. Linux Pratique (2013) n°83 59-63.
+
+ 
+Représenter les données: notion UTF8
+
+Une des premières tâches dans un projet de recherche est de savoir comment recueillir et stocker ses données de manière intelligible et efficiente:
+- intelligible: comprendre de ce que l'on a fait plusieurs mois plus tard
+- efficiente: 80% du temps nécessaire au traitement statistique des données est consacré à nettoyer les données (#ref)
+
+Règle 1: le support de saisie doit servir uniquement à cette tâche et rien d'autre.
+
+Les données nettoyées: ce sont typiquement celles que l'on trouve dans les exemples des ouvrages de référence. Elles sont "parfaites" en ce sens qu"elles peuvent être importée dans un logiciel de statistique et traitées immédiatement sans que le progrmme de génère une erreur. L'objectf est que vos donnnées soient "parfaites". Hélas dans la vraie vie rien n'est parfait et il est rare q'un logiciels accepte sans broncher vos données.
+
+Les données manquantes
+----------------------
+Des données peuvent mnquer pour de nombreuses raisons. La plupart des logiciels acceptent le symbole NA (pour not avalaible) pour désigner une valeur manquante. Pour obtenir un vecteur de valeurs non manquantes: x[!is.na(x)].
+
+Référence:
+
+[Sharing Clinical Research Data: Workshop Summary](http://www.nap.edu/catalog/18267/sharing-clinical-research-data-workshop-summary). Accédé le 7/2/2015
