@@ -69,6 +69,7 @@ img {
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
+<p><a href="http://simplystatistics.org/2013/12/16/a-summary-of-the-evidence-that-most-published-research-is-false/">A summary of the evidence that most published research is false</a></p>
 </div>
 <div id="organiser-son-travail" class="section level1">
 <h1>Organiser son travail</h1>
@@ -80,6 +81,7 @@ img {
 <p>Faut-il utiliser un tableur ou un logiciel de statistiques pour saisir les données ? <a href="http://http://www.quantumforest.com/2013/12/excel-fanaticism-and-r/">Luis A. Apiolaza</a></p>
 <div id="anatomie-dun-tableur" class="section level2">
 <h2>Anatomie d’un tableur</h2>
+<p><a href="http://www.ilri.org/rmg/RMGcd/DataAnalysisAgroforestry/Materials/Other%20documents/GenstatManual.pdf">Manuel Genstat</a></p>
 </div>
 </div>
 <div id="divers" class="section level1">
@@ -98,6 +100,103 @@ img {
 <p>Des données peuvent mnquer pour de nombreuses raisons. La plupart des logiciels acceptent le symbole NA (pour not avalaible) pour désigner une valeur manquante. Pour obtenir un vecteur de valeurs non manquantes: x[!is.na(x)].</p>
 <p>Référence:</p>
 <p><a href="http://www.nap.edu/catalog/18267/sharing-clinical-research-data-workshop-summary">Sharing Clinical Research Data: Workshop Summary</a>. Accédé le 7/2/2015</p>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p>Hadley Wickham <a href="http://www.jstatsoft.org/v59/i10/paper">Tidy Data</a></p>
+<p>Une version alégée de <a href="https://ramnathv.github.io/pycon2014-r/explore/tidy.html">cet article</a> figure ci-après:</p>
+<div id="donnees-ordonnees-tidy-data" class="section level2">
+<h2>Données ordonnées (Tidy data)</h2>
+<p>Ce sont les tableaux de données que l’on touve dans les ouvrages de statistiques. Ils ont prêts à l’emploi, sans ereurs, sans données manquantes. Soumises à un logiciel de statistiques, elle produiront instantannément un résultat sans un arrêt intempestif du programme assorti de message d’erreur plus ou moins abscons.</p>
+<p>Les données brutes (Raw data) dans le monde réel sont souvent désordonnés et mal formatées (Messy data). En outre, il peut manquer de détails appropriés de l’étude. La correction des données natives peut être un exercice périlleux puisque les données brutes originales risque d’être écrasées et il n’y aurait aucun moyen de vérifier ce processus ou de récupérer des erreurs commises pendant cette phase. Une bonne pratique serait de conserver les données d’origine, et d’utiliser un script programmatique pour nettoyer, corriger les erreurs et sauvegarder cet ensemble de données nettoyées pour une analyse ultérieure.</p>
+<p>Question: combien de variable dans le tableau suivant:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">lésions</th>
+<th align="left">hommes</th>
+<th align="left">femmes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">oui</td>
+<td align="left">4</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">non</td>
+<td align="left">2</td>
+<td align="left">5</td>
+</tr>
+</tbody>
+</table>
+<p>La façon dont le tableau est présenté, il semble que il ya seulement deux variables. La bonne réponse est trois: lésions?, sexe, nombre.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">sujet</th>
+<th align="left">lésion</th>
+<th align="left">sexe</th>
+<th align="left">nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">oui</td>
+<td align="left">H</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">oui</td>
+<td align="left">F</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">non</td>
+<td align="left">H</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">non</td>
+<td align="left">F</td>
+<td align="left">5</td>
+</tr>
+</tbody>
+</table>
+<p>Comment définir des données bien ordonnées ? Ce sont des données répondant aux 3 caractéristiques suivantes:</p>
+<ul>
+<li>les observations (sujets) sont en lignes</li>
+<li>les variables sont en colonnes</li>
+<li>toutes les données sont dans le même tableau</li>
+</ul>
+<p>Ce format est également appelé large (wide) et s’oppose au format long (long). La plupart des logiciels ont des instructions permettant de passer d’un format à l’autre (ex. format pivot dans excel).</p>
+<p>Les données bien ordonnées facilitent l’analyse statistiques des données.</p>
+<p>Les erreurs les plus fréquentes:</p>
+<pre><code>religion  &lt;$10k $10-20k $20-30k $30-40k $40-50k $50-75k $75-100k    $100-150k   &gt;150k   Don't know/refused
+1   Agnostic    27  34  60  81  76  137 122 109 84  96
+2   Atheist 12  27  37  52  35  70  73  59  74  76
+3   Buddhist    27  21  30  34  33  58  62  39  53  54
+4   Catholic    418 617 732 670 638 1116    949 792 633 1489
+5   Don’t know/refused  15  14  15  11  10  35  21  17  18  116
+6   Evangelical Prot    575 869 1064    982 881 1486    949 723 414 1529
+7   Hindu   1   9   7   9   11  34  47  48  54  37
+8   Historically Black Prot 228 244 236 238 197 223 131 81  78  339
+9   Jehovah's Witness   20  27  24  24  21  30  15  11  6   37
+10  Jewish  19  19  25  25  30  95  69  87  151 162
+11  Mainline Prot   289 495 619 655 651 1107    939 753 634 1328
+12  Mormon  29  40  48  51  56  112 85  49  42  69
+13  Muslim  6   7   9   10  9   23  16  8   6   22
+14  Orthodox    13  17  23  32  32  47  38  42  46  73
+15  Other Christian 9   7   11  13  13  14  18  14  12  18
+16  Other Faiths    20  33  40  46  49  63  46  40  41  71
+17  Other World Religions   5   2   3   4   2   7   3   4   4   8
+18  Unaffiliated    217 299 374 365 341 528 407 321 258 597</code></pre>
 </div>
 </div>
 
