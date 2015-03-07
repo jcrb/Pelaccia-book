@@ -59,3 +59,12 @@ If you are using BibLaTeX there is an @online entry type:
   url = {http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm},
   urldate = {2010-09-30}
 }
+
+ Or, if your bibliographystyle does not support the url field (you'll get errors when BiBTeX runs or the output will be wrong), use
+
+    @manual{Senn:2009,
+      title  = "Using {\LaTeX} for Your Thesis",
+      author = "Mark Senn",
+      note   = "\url{http://engineering.purdue.edu/~mark/puthesis}",
+      year   = "2009 (accessed February 3, 2014)"
+    }
