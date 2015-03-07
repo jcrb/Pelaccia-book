@@ -11,7 +11,51 @@ Ressources bibliographiques
 1. [Organizing Your Data](http://www.bu.edu/datamanagement/outline/elements/organize/#Forms)
   - consulté le 7/3/2015
   - Boston University
+  
+    @Misc{ 1,
+    title = {Organizing Your Data},
+    author = {Boston University},
+    howpublished = {\url{http://www.bu.edu/datamanagement/outline/elements/organize/#Forms}},
+    url = {http://www.bu.edu/datamanagement/outline/elements/organize/#Forms},
+    note = {Accessed: 2015-03-07},
+  }
 
 2. [ORGANIZING AND ANALYZING YOUR DATA ](http://www.wilder.org/Wilder-Research/Publications/Studies/Program%20Evaluation%20and%20Research%20Tips/Organizing%20and%20Analyzing%20Your%20Data%20-%20Tips%20for%20Conducting%20Program%20Evaluation%20Issue%2013,%20Fact%20Sheet.pdf)
   - consulté le 7/3/2015
   
+
+
+Usages avec Bibtex
+===================
+A BibTeX entry for LaTeX users is
+
+  @Article{,
+    title = {Dates and Times Made Easy with {lubridate}},
+    author = {Garrett Grolemund and Hadley Wickham},
+    journal = {Journal of Statistical Software},
+    year = {2011},
+    volume = {40},
+    number = {3},
+    pages = {1--25},
+    url = {http://www.jstatsoft.org/v40/i03/},
+  }
+  
+[A simple way of doing it in BibTeX is with a @misc entry](http://tex.stackexchange.com/questions/3587/how-can-i-use-bibtex-to-cite-a-web-page)
+
+@misc{WinNT,
+  title = {{MS Windows NT} Kernel Description},
+  howpublished = {\url{http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm}},
+  note = {Accessed: 2010-09-30}
+}
+
+You should also perhaps include an author if you know it. And remember to load a package such as hyperref or url.
+
+If you are using BibLaTeX there is an @online entry type:
+
+@online{WinNT,
+  author = {MultiMedia LLC},
+  title = {{MS Windows NT} Kernel Description},
+  year = 1999,
+  url = {http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm},
+  urldate = {2010-09-30}
+}
