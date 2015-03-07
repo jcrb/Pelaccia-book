@@ -1,0 +1,17 @@
+---
+title: "Bibliographie"
+author: "JcB"
+date: "07/03/2015"
+output: html_document
+---
+
+Ressources bibliographiques
+===========================
+
+1. [Organizing Your Data](http://www.bu.edu/datamanagement/outline/elements/organize/#Forms)
+  - consulté le 7/3/2015
+  - Boston University
+
+2. [ORGANIZING AND ANALYZING YOUR DATA ](http://www.wilder.org/Wilder-Research/Publications/Studies/Program%20Evaluation%20and%20Research%20Tips/Organizing%20and%20Analyzing%20Your%20Data%20-%20Tips%20for%20Conducting%20Program%20Evaluation%20Issue%2013,%20Fact%20Sheet.pdf)
+  - consulté le 7/3/2015
+  
