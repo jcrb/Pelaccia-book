@@ -2,7 +2,15 @@
 title: "Superviser un étudiant dans son travail de recherche"
 author: "jcb"
 date: "10 février 2015"
-output: html_document
+output:
+  html_document:
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    keep_tex: yes
+    number_sections: yes
+    toc: yes
 ---
 
 Introduction
@@ -62,7 +70,7 @@ Data
 
 Hadley Wickham [Tidy Data](http://www.jstatsoft.org/v59/i10/paper)
 
-Une version alégée de [cet article](https://ramnathv.github.io/pycon2014-r/explore/tidy.html) figure ci-après:
+Une version allégée de [cet article](https://ramnathv.github.io/pycon2014-r/explore/tidy.html) figure ci-après:
 
 Données ordonnées (Tidy data)
 -----------------------------
@@ -101,8 +109,8 @@ Les erreurs les plus fréquentes:
 
 ```{r pew, echo=FALSE, comment=""}
 # pew <- read.delim(file = "http://stat405.had.co.nz/data/pew.txt", header = TRUE, stringsAsFactors = FALSE, check.name = F)
-# write.csv(pew, file = "pew.csv")
-pew <- read.csv("pew.csv")
+# write.csv(pew, file = "data/pew.csv")
+pew <- read.csv("data/pew.csv")
 ```
 Répartition des revenus par Religion
 
@@ -131,10 +139,11 @@ religion  <$10k	$10-20k	$20-30k	$30-40k	$40-50k	$50-75k	$75-100k	$100-150k	>150k
 
 Tuberculose
 ```{r tb, echo=FALSE}
-tb <- read.csv(file = "http://stat405.had.co.nz/data/tb.csv", header = TRUE, stringsAsFactors = FALSE)
+# tb <- read.csv(file = "http://stat405.had.co.nz/data/tb.csv", header = TRUE, stringsAsFactors = FALSE)
+tb <- read.csv(file = "data/tb.csv", header = TRUE, stringsAsFactors = FALSE)
 head(tb)
 ```
-Sauf pour ISO2 et l'année, le reste des en-têtes de colonnes sont en fait des valeurs d'une variable qui se cache, en fait la combinaison de deux variables, le sexe et l'âge.
+Sauf pour ISO2 et l'année, le reste des en-têtes de colonnes sont en fait des valeurs d'une variable qui se cache, la combinaison de deux variables, le sexe et l'âge.
 
 Le temps
 ```{r weather, echo=FALSE}
@@ -172,13 +181,14 @@ pew_tidy <- melt(
   variable.name = "income",
   value.name = "frequency"
 )
-
+```
 [Autre référence](http://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
 ---------------
 
 Data tidying
+============
 
-It is often said that 80% of data analysis is spent on the cleaning and preparing data. And it's not just a first step, but it must be repeated many over the course of analysis as new problems come to light or new data is collected. To get a handle on the problem, this paper focuses on a small, but important, aspect of data cleaning that I call data tidying: structuring datasets to facilitate analysis.
+Il est souvent dit que 80% de l'analyse des données est consacré au nettoyage et la préparation des données. Et ce n' est pas une étape unique, mais il faut la répéter plusieurs fois au cours de l'analyse parceque de nouveaux problèmes apparaissent ou de nouvelles données sont collectées. Le présent document se concentre sur un aspect important du nettoyage des données que je appelle le rangement des données (tidying): structurer un ensemble de données pour en faciliter l'analyse.
 
 The principles of tidy data provide a standard way to organise data values within a dataset. A standard makes initial data cleaning easier because you don't need to start from scratch and reinvent the wheel every time. The tidy data standard has been designed to facilitate initial exploration and analysis of the data, and to simplify the development of data analysis tools that work well together. Current tools often require translation. You have to spend time munging the output from one tool so you can input it into another. Tidy datasets and tidy tools work hand in hand to make data analysis easier, allowing you to focus on the interesting domain problem, not on the uninteresting logistics of data.
 Defining tidy data {#sec:defining}
@@ -189,9 +199,11 @@ Like families, tidy datasets are all alike but every messy dataset is messy in i
 Data structure
 
 Most statistical datasets are data frames made up of rows and columns. The columns are almost always labeled and the rows are sometimes labeled. The following code provides some data about an imaginary experiment in a format commonly seen in the wild. The table has two columns and three rows, and both rows and columns are labeled.
-
+```{r}
 preg <- read.csv("preg.csv", stringsAsFactors = FALSE)
 preg
+```
+
 #>           name treatmenta treatmentb
 #> 1   John Smith         NA         18
 #> 2     Jane Doe          4          1
@@ -593,12 +605,14 @@ Datasets often involve values collected at multiple levels, on different types o
 The billboard dataset actually contains observations on two types of observational units: the song and its rank in each week. This manifests itself through the duplication of facts about the song: artist, year and time are repeated many times.
 
 This dataset needs to be broken down into two pieces: a song dataset which stores artist, song name and time, and a ranking dataset which gives the rank of the song in each week. We first extract a song dataset:
-
+```{r}
 song <- billboard3 %>% 
   select(artist, track, year, time) %>%
   unique() %>%
   mutate(song_id = row_number())
 song
+```
+
 #> Source: local data frame [317 x 5]
 #> 
 #>            artist                   track year time song_id
@@ -615,12 +629,14 @@ song
 #> ..            ...                     ...  ...  ...     ...
 
 Then use that to make a rank dataset by replacing repeated song facts with a pointer to song details (a unique song id):
-
+```{r}
 rank <- billboard3 %>%
   left_join(song, c("artist", "track", "year", "time")) %>%
   select(song_id, date, week, rank) %>%
   arrange(song_id, date)
 rank
+```
+
 #> Source: local data frame [5,307 x 4]
 #> 
 #>    song_id       date week rank
@@ -714,3 +730,7 @@ Divers
 ======
 
 [Anatomie d'une table](http://www.datakind.org/blog/whats-in-a-table/)
+
+[Primer on Data Management: What you always wanted to know](https://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf)
+
+[A Quick Guide to Organizing Computational Biology Projects](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)

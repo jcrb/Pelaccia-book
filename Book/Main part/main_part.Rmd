@@ -3,12 +3,15 @@ title: "Gérer les données d'un travail de recherche"
 author: "JcB"
 date: "07/03/2015"
 output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
   html_document:
     number_sections: yes
     toc: yes
 ---
 
-Les données (data) sont le corolaire insiscociable de tout travail de recherche. Elle peuvent exister avant de poser la question de recherche (travail rétrospectif) ou apparaitre après que la question soit poseé (travail prospectif). La nature et la pertinence des données à recueillir relève de la QR. On s'intéresse ici à la gestion de ces données.
+Les données (data) sont le corolaire indiscociable de tout travail de recherche. Elle peuvent exister avant de poser la question de recherche (travail rétrospectif) ou apparaitre après que la question soit poseé (travail prospectif). La nature et la pertinence des données à recueillir relève de la QR. On s'intéresse ici à la gestion de ces données.
 
 La gestion des données soulève les questions suivantes:
 
