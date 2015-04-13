@@ -23,6 +23,13 @@ Ressources bibliographiques
 2. [ORGANIZING AND ANALYZING YOUR DATA ](http://www.wilder.org/Wilder-Research/Publications/Studies/Program%20Evaluation%20and%20Research%20Tips/Organizing%20and%20Analyzing%20Your%20Data%20-%20Tips%20for%20Conducting%20Program%20Evaluation%20Issue%2013,%20Fact%20Sheet.pdf)
   - consulté le 7/3/2015
   
+3. [Primer on Data Management: What you always wanted to know](https://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf)
+  - consulté le 7/3/2015
+
+4. [An introduction to data cleaning with R](http://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf)
+  - consulté le 7/3/2015
+
+  
 
 
 Usages avec Bibtex

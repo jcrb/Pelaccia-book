@@ -26,11 +26,21 @@ Organiser ses données
 
 Votre travail de recherche est important et des données bien organisées faciliteront le travail du statisticien et de vos pairs qui doivent pouvoir reproduire et évaluer vos résultats (ref[1]). 
 
-Cycle de vie des données
+Cycle de vie des données [3]
 ------------------------
 - données brutes (raw data)
 - données désorganisées (messy data)
 - donnée exploitables (tidy data)
+
+Carly Strasser et coll.[3] décrivent 8 compOsants
+1. planifier
+2. collecter: les données sont recueillies à la main ou récupérées via des capteurs et stockées sur un support numérique
+3. Vérifier la qualité et l'intégrité des données
+4. Décrire: les données sont soigneusement et précisément décrites sous forme de métadonnées standardisées
+5. Préserver: les données placées sur un support permettant de les stocker sur le long terme
+6. Découvrir: les données potentiellemet utiles sont localiséeset obtenues avec les métadonnées qui les accompagnenet.
+7. intégrer: les données provenant de sources disparates sont combinées pour former un ensemble de données homogènes qui puisse être analysé
+8. Analyser: analyse des données
 
 Formats de fichier [1]
 -------------------
@@ -93,3 +103,21 @@ Les données sont généralement conservées sur 2 types de support, les tableur
 
 La première (et très importante): un tableur doit servir à saisir des données et ne servir qu'à cela. La plupart des ennuis commencent lorsqu'on pense qu'un tableur peut tout faire, en particulier des statistiques. Il faut abandonner cette idée et se placer uniquement sous l'angle de la saisie des données. Pour faire des statistiques, il y a des logiciels pour celà.
 
+NETTOYER LES DONNÉES [5]
+========================
+Il n'y a que dans les ouvrages de statistique où l'on trouve des données prètes à être analysées. Dans un travail de recherche les données passent par plusieurs états avant de  pouvoir être analysées:
+
+1. les données brutes (raw data): c'est la saisie initiale de l'expérimentateur. Il manque souvent le header, certains type de données sont erronés, erreur de catégorisation des données, caractère mal encodé ou inconnu (caractères accentués, réservés), etc. La lecture directe de ces données par un logiciel de statistique échoue.
+
+2. les données techniquement correctes: ce sont des données brutes corrigées de sorte qu'elle sony techinquement acceptables par un programme de traitement. Les "dirty data" sont transformées en "messy data" (données propres):
+- données manquantes: il manque toujours des données... Chaque fois que c'est possible essayer de retrouver la donnée. Si la donnée est irrécupérable, la remplacer par un symbole compréhensible par le logiciel statistique comme NA (Not Avalaible). Ne jamais laisser une case vide. Eviter les symboles qui prêtent à confusion: 0, 99999, -1, etc. Ne pas confondre NA et Inconnu ou NSP (ne sais pas) ou NSPR (ne souhaite pas répondre). Ne pas supprimer des observations parceque des données manquantes.
+- données spéciales: concernent surtout les valeurs numériques pour les nombres n'appartenant pas à l'ensemble des réels: NA, NaN (not a number), Inf.
+- données extrèmes (outliers)
+
+3. Données cohérentes: dans cette dernière étape on vérifie la cohérence des données techniquement correctes. Par exemple qu'il n'existe pas d'age négatif ou supérieur à une certaine limite, une pathologie incompatible ave un sexe donné. Cette étapepeut se révéler particulièrement fastidieuse et complexe.
+
+Ce n'est qu'à la fin de cette troisième étape que les données peuvent être soumises à une analyse statistique.
+
+2 remarques:
+- ces trois étapes doivent faire l'objet de trois fichiers distincts afin de pouvoir revenir en arrière en cas de problème.
+- toutes les étapes doivent être documentées pour comprendre quelles manipulations ou transformations ont été néccessaires pour passer de l'une à l'autre
