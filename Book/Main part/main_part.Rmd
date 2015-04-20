@@ -11,7 +11,43 @@ output:
     toc: yes
 ---
 
-Les données (data) sont le corolaire indiscociable de tout travail de recherche. Elle peuvent exister avant de poser la question de recherche (travail rétrospectif) ou apparaitre après que la question soit poseé (travail prospectif). La nature et la pertinence des données à recueillir relève de la QR. On s'intéresse ici à la gestion de ces données.
+Un travail de recherche peut se résumer à l'équation suivante:
+````
+Question de recherche + données + analyse (statistique) + publication
+```
+Le présent chapitre s'intéresse au point 2 et très partiellement au point 3.
+
+Les étapes de l'analyse statistique:
+
+- statistique descriptive: il s'agit de décrire les données au travers de quelques chiffres qui les résument
+  - univariée: moyenne, médiane, quantiles
+  - bivariée: covariance, corrélation, régression, comparaison de deux moyennes
+  - multivarié: ANOVA
+- statistique inférentielle: un travail porte toujours sur un échantillon que l'on espère aussi représentatif d'un population que l'on ne connaîtra probablement jamais. L'inférence rassemble les techniques statistiques qui permettent d'extrapoler les conclusins basées sur un échantillon à une population.
+- modeélisation
+
+sigma $\sigma, \mu, \sigma^2$
+
+
+Les données (data) sont le corolaire indiscociable de tout travail de recherche. Elle peuvent exister avant de poser la question de recherche (travail rétrospectif) ou apparaitre après que la question soit poseé (travail prospectif). La nature et la pertinence des données à recueillir relève de la QR. On s'intéresse ici à la gestion de ces données en vue de leur expoitation statitique. C'est un étape crutiale pour deux raisons:
+
+- 80% du temps nécessaire au traitement des données consiste à les rendre "présentables", c'est à dire prêtes à être "moulinées" par un logiciel de statistique. Plus on est pressé plues cette organisation des données est importante.
+- une bonne organisation des données permet à un observateur extérieur de comprendre comment le travail s'est construit et au chercheur de reprendre son travail plusieurs mois ou année plus tard sans se demander comment il a pu obtenir ces résultats. Cette attitude "écologique" connait un développement important actuellement sous le nom de "reproductible research". C'est aussi un moyen de contrôler la faude scientifique.
+
+En pratique il faut disposer de trois outils
+- un tableur pour saisir les données et faire un premier nettoyage des données.
+- un logiciel de statistiques pour exploiter les données.
+- un traitement de texte qui à la manière d'un cahier de laboratoire permettra de conserver une trace de toutes les opérations effectuées sur les données.
+
+Organiser les fichiers
+----------------------
+
+- un dossier principal portant le titre de l'étude
+- 3 sous dossiers:
+  - __data__
+  - __notebook__
+  - __stat__
+  - __production__
 
 La gestion des données soulève les questions suivantes:
 
@@ -20,6 +56,52 @@ La gestion des données soulève les questions suivantes:
 - comment partager mes données avec un statisticien?
 - comment exploiter statistiquement mes données ?
 - comment s'inscrire dans une démarche de recherche reproductible ?
+
+Anatomie d'un tableur
+---------------------
+
+Les données portent généralement sur des mesures appelées __variables__ effectuées sur des __individus__. Les données sont stockées dans un tableau rectangulaire appelé __table__ pour une base de données, __feuille__ pour un tableur, __matrice__ en mathématiques ou __dataframe__ en statistiques.
+
+Par convention:
+
+- chaque ligne du tableau représente un individu unique
+- chaque colonne contient les différetes valeurs d'une même variable. C'est une bonne pratique de regrouper
+  - les variables qualitatives (sexe, CSP) appelées aussi __facteurs__ qui permettent de faire des analyses par sous groupes
+  - les variables qualitatives (age, notes) qui serviront aux calculs (moyenne)
+- la première ligne du tableau appelée __header__ contient le nom des colonnes. Dans certains cas il est possible de réserver les premières lignes du tableau pour y noter des inforations à propos des varaibles ou de l'étude (métadatas). Cependant cette pratique des à déconseiller au profit du docuent texte associé au tableur (voir le paragraphe notebook)
+
+Ce gabarit doit être bien pensé dès le départ pour éviter toute réorganisation importante par la suite, source d'erreur par confusion des versions.
+
+Règles:
+
+#### Nom de colonnes
+
+#### les caractères interdits
+
+- les acents
+- les blancs: confondus avec les séparateurs de colonne. A remplacer par le caractère _underscore_.
+- la virgule: confondue avec les séparateurs de colonne. A remplacer par le point décimal.
+
+Astuces
+
+- chercher/remplacer
+
+Variable factorielle (sexe)
+
+- les représenter par des caractères alphabétiques plutot que par de chiffres: H ou F est plus explicite que 1 ou 2, sans compter le risque de confusion ou d'erreur d'interprtation (clacul de la moyenne sur le sexe)
+
+Les données manquantes
+
+Ne pas mélanger dans une même colonne des lettres et des chiffres.
+
+Les tableurs
+============
+
+Le tableur doit servir à recueillir les données et rien d'autre.
+
+Le cahier de laboratoire ou NoteBook
+=====================================
+
 
 Organiser ses données
 =====================
@@ -30,7 +112,7 @@ Cycle de vie des données [3]
 ------------------------
 - données brutes (raw data)
 - données désorganisées (messy data)
-- donnée exploitables (tidy data)
+- donnée  nettoyées et exploitables (tidy data)
 
 Carly Strasser et coll.[3] décrivent 8 compOsants
 1. planifier
