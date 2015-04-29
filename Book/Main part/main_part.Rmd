@@ -81,18 +81,37 @@ Règles:
 - les acents
 - les blancs: confondus avec les séparateurs de colonne. A remplacer par le caractère _underscore_.
 - la virgule: confondue avec les séparateurs de colonne. A remplacer par le point décimal.
+- les caractères réservés
 
 Astuces
 
 - chercher/remplacer
 
-Variable factorielle (sexe)
+Petite classification des variables
+- Toutes les variables
+- qualitative ou Variable factorielle (sexe, parité) divisées en catégories (levels) mutuellent exclusif
+  - quelconque: sexe, CSP, binaires (fumeur ou non)
+  - ordinales (l'ordre à un sens): échelle de Likert, score de Glasgow
+- quantitatives: poids, 
+  - continue (taille)
+  - discrètes (nombre de frères et soeurs)
 
 - les représenter par des caractères alphabétiques plutot que par de chiffres: H ou F est plus explicite que 1 ou 2, sans compter le risque de confusion ou d'erreur d'interprtation (clacul de la moyenne sur le sexe)
 
 Les données manquantes
 
 Ne pas mélanger dans une même colonne des lettres et des chiffres.
+
+Le format csv
+--------------
+Comment faire communiquer un tableur et un logiciel statistique ?
+CSV = comma separated virgule (données séparées par une virgule
+Format universel (fichier/enregistrer sous)
+Les colonne du tableur sont remplacées par des virgules
+Le nom du fichier se termine par .csv
+Il existe des variantes (tab,;)
+[http://fr.wikipedia.org/wiki/Comma-separated_values]
+Le format csv ne connait pas les formats multifeuilles (classeurs). haque feuillet du classeur devra être enregistré séparément.
 
 Les tableurs
 ============
@@ -185,6 +204,56 @@ Les données sont généralement conservées sur 2 types de support, les tableur
 
 La première (et très importante): un tableur doit servir à saisir des données et ne servir qu'à cela. La plupart des ennuis commencent lorsqu'on pense qu'un tableur peut tout faire, en particulier des statistiques. Il faut abandonner cette idée et se placer uniquement sous l'angle de la saisie des données. Pour faire des statistiques, il y a des logiciels pour celà.
 
+Anatomie d'une feuille de calcul
+--------------------------------
+L'organisation des données dans une feuille de calcul pour qu'elle puissent être traitées immédiatement par logiciel de statistiques est une opération semée d'embuches, si on ne respecte pas quelques règles de base.
+
+![anat](../images/anatomie_tableur.png)
+
+Une feuille est constituées de __cellules__ délimitées par des __lignes__ et des __colonnes__ formant un tableau rectangulaire où:
+
+- chaque colonne ne doit contenir qu'une et une seule variable.
+- chaque ligne ne concerne qu'une et une seule observation
+- le total des lignes doit être égal au total des observation + 1 (header)
+
+La conséquence immédiate de la règle 2 est que les données ne doivent pas être grouppées.
+
+La feuille de saisie est divisée en 3 zones horizontales:
+
+- la première, __facultative__, sert à stocker les métadonnées [http://fr.wikipedia.org/wiki/M%C3%A9tadonn%C3%A9e]. Sa présence est à éviter (utiliser un document annexe) et sera éliminée au moment de l'analyse.
+- la seconde stocke le nom des colonnes: c'est l'__en-tête__ ou __header__.
+- la troisième contient les données proprement dites.
+
+La troisième zone est divisée verticalement en 2:
+
+- les colonnes les plus à gauche contiennent les variables de type "facteur" (factorielles: profession, type de pédagogie)
+- les colonnes les plus à droite contiennent les mesures
+
+Métadonnées [A Gentle Introduction to Metadata ](http://www.language-archives.org/documents/gentle-intro.html)Jeff Good University of California, Berkeley. Accédé le 28/4/2015
+ce sont des données à propos des données.
+Elles servent à comprendre le contexte dans lequel se fait l'étude:
+
+- nom de l'auteur, des investigateurs
+- version du questionnaire
+- méthodes de description des variables: 'pour la rubrique sexe préciser H ou F'. 
+
+En pratique il est recommandé de ne pas faire figurer cette zone dans le tableur mais de les faire figurer dans un document annexe comme le __dictionnaire__ pour la description des données et le __notebook__ pour expliquer comment les données ont été recueillies,par qui, dans quelles conditions, etc.
+
+Le nom des colonnes (header)
+-------------------
+- une seule ligne. 
+Sert à stocker le nom opérationnel des colonnes. 
+Règles:
+le nom est succinct (5 caractères)
+il ne doit pas contenir d'espace ou de caractères qui pourrait être mal interprété (, ; / \ @ &)
+remplacer les espace par des underscore (caractère 8) : Ceci_est_un_exemple
+pas de caractères accentués
+Encodage : UTF-8
+Ne pas fusionner les cellules  
+
+Les pièges à éviter
+-------------------
+
 NETTOYER LES DONNÉES [5]
 ========================
 Il n'y a que dans les ouvrages de statistique où l'on trouve des données prètes à être analysées. Dans un travail de recherche les données passent par plusieurs états avant de  pouvoir être analysées:
@@ -203,3 +272,13 @@ Ce n'est qu'à la fin de cette troisième étape que les données peuvent être 
 2 remarques:
 - ces trois étapes doivent faire l'objet de trois fichiers distincts afin de pouvoir revenir en arrière en cas de problème.
 - toutes les étapes doivent être documentées pour comprendre quelles manipulations ou transformations ont été néccessaires pour passer de l'une à l'autre
+
+Quand utiliser une démarche quantitative ?
+==========================================
+
+La recherche qualitative s'intéresse aux données mesurables sur lesquels on peut appliquer des méthodes statistiques pour les décrire, les comparer, les inférer (Tirer une conclusion d’une proposition ou d’un fait, etc. [wikitionnaire](http://fr.wiktionary.org/wiki/inf%C3%A9rer)) ou les modéliser.
+
+inférence: estimer les paramètres d'une population à partir d'un échantillon. La précision de l'estimation dépend de la taille de l'échantillon. Inversement, si on fixe la précision souhaitée on peut déterminer la taille l'échantillon. D'une manière générale, pour doubler la précision (cad diviser par 2 l'intervalle dans lequel se trouve le paramètre d'intérêt), il faut quadrupler la taille de l'échantillon.
+
+modélisation: c'est trouver la meilleure combinaison possible de plusieurs variables pour prédire le comportement d'une variable d'intérêt. Par exexemple quelle sont les chances qu'une personne se plaignant d'une douleur thoracique soit porteuse d'une pathologie coronarienne sachant que l'on a mesuré chez eelle un certain nombre de variables (sexe, age, poids, taux de cholestérol, etc.) dont on a montré préalablement (par les méthodes statistiques précédentes) qu'elles avaient un lien avec la pathologie suspectée.
+Il existe de nombreuses techniques de modélisation. L'une des plus répendue est le modèle linéaire.
