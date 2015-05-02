@@ -57,24 +57,34 @@ La gestion des données soulève les questions suivantes:
 - comment exploiter statistiquement mes données ?
 - comment s'inscrire dans une démarche de recherche reproductible ?
 
+Note book (code book)
+---------------------
+
 Anatomie d'un tableur
 ---------------------
 
 Les données portent généralement sur des mesures appelées __variables__ effectuées sur des __individus__. Les données sont stockées dans un tableau rectangulaire appelé __table__ pour une base de données, __feuille__ pour un tableur, __matrice__ en mathématiques ou __dataframe__ en statistiques.
 
-Par convention:
+Par convention[5]:
 
 - chaque ligne du tableau représente un individu unique
-- chaque colonne contient les différetes valeurs d'une même variable. C'est une bonne pratique de regrouper
+- chaque colonne contient les différetes valeurs d'une même variable. 
+- une table ne doit contenir qu'un type de données
+- si plusieurs tables sont nécessaires, elles doivent inclure une colonne, identique dans chaque table, qui permette de les lier (merging)
+
+C'est une bonne pratique de regrouper les variables:
+
   - les variables qualitatives (sexe, CSP) appelées aussi __facteurs__ qui permettent de faire des analyses par sous groupes
-  - les variables qualitatives (age, notes) qui serviront aux calculs (moyenne)
-- la première ligne du tableau appelée __header__ contient le nom des colonnes. Dans certains cas il est possible de réserver les premières lignes du tableau pour y noter des inforations à propos des varaibles ou de l'étude (métadatas). Cependant cette pratique des à déconseiller au profit du docuent texte associé au tableur (voir le paragraphe notebook)
+  - les variables quantitatives (age, notes) qui serviront aux calculs (moyenne)
+  
+- la première ligne du tableau appelée __header__ contient le nom des colonnes. Dans certains cas il est possible de réserver les premières lignes du tableau pour y noter des informations à propos des varaibles ou de l'étude (métadatas). Cependant cette pratique des à déconseiller au profit du docuent texte associé au tableur (voir le paragraphe notebook)
 
 Ce gabarit doit être bien pensé dès le départ pour éviter toute réorganisation importante par la suite, source d'erreur par confusion des versions.
 
 Règles:
 
 #### Nom de colonnes
+AgeAuDiagnostic plutôt que ADx ou tout autre abréviation incompréhensible pour une autre personne.
 
 #### les caractères interdits
 
@@ -83,6 +93,11 @@ Règles:
 - la virgule: confondue avec les séparateurs de colonne. A remplacer par le point décimal.
 - les caractères réservés
 
+#### les autres interdits
+- les macros
+- la surbrillance ou les couleurs
+
+
 Astuces
 
 - chercher/remplacer
@@ -90,7 +105,7 @@ Astuces
 Petite classification des variables
 - Toutes les variables
 - qualitative ou Variable factorielle (sexe, parité) divisées en catégories (levels) mutuellent exclusif
-  - quelconque: sexe, CSP, binaires (fumeur ou non)
+  - nominales (l'ordre n'a pas de sens): sexe, CSP, binaires (fumeur ou non)
   - ordinales (l'ordre à un sens): échelle de Likert, score de Glasgow
 - quantitatives: poids, 
   - continue (taille)
