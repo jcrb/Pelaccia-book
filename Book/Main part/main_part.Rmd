@@ -37,7 +37,126 @@ Les données (data) sont le corolaire indiscociable de tout travail de recherche
 En pratique il faut disposer de trois outils
 - un tableur pour saisir les données et faire un premier nettoyage des données.
 - un logiciel de statistiques pour exploiter les données.
-- un traitement de texte qui à la manière d'un cahier de laboratoire permettra de conserver une trace de toutes les opérations effectuées sur les données.
+- un traitement de texte qui à la manière d'un cahier de laboratoire permettra de conserver une trace de toutes les opérations effectuées sur les données (appelé aussi note book ou code book).
+
+Ce sont les mêmes éléments dont aura besoin le statisticien por vous aider à traiter les données:
+
+1. Quelle est la question de recherche ?
+2. Les données brutes.
+3. les données "nettoyées" ou [tidy data] (http://vita.had.co.nz/papers/tidy-data.pdf)
+4. Un lexique décrivant 
+  - chaque variable 
+  - la fourchette de valeurs possibles
+5. La recette que vous avez utilisé pour passer de l'étape 1 aux étapes 2 et 3
+
+Les données brutes
+------------------
+Syn: raw data, messy data
+
+Il est essentiel d'inclure et de conserver les données sous forme brute (native)
+Voici quelques exemples de forme brute des données:
+
+- Fichier binaire fourni par un appareil de mesure
+- Un classeur Excel non formaté
+- Fichier au format Json fourni par twitter
+- Les chiffres saisis à la main tout en regardant à travers un microscope...
+
+Ce sont les données de référence. Il est recommandé de conserver des données particulièrement précieuses sur au moins trois support différents stokés dans des lieux différents. Le format et la nature du support doivent faire appel à des solutions libres pour garantir une pérénité qui ne dépende pas d'un éditeur ou d'une version logicielle. Pour rester exploitables dans le temps quelque soit le support, les données doivent être accompagnées de renseignements très précis sur leur format, comment et quand elles ont été collectées, par qui, lest fourchettes de validité, la signification des abréviations, etc. Ces renseignements indispensables doivent permettre à qelq'un qui n'a pas participé à l'étude de comprendre les objectifs de celle-ci et si les données collectées sont de nature à répondre à la question de recherche. On regroupe toutes ces informations sous le nom de __métadonnées__. La conservation des métadonnées est indiscociable de celle des données.
+
+On reconnait des données brutes sur les éléments suivants:
+
+- L'utilisation de ces données avec un logiciel statistique échoue
+- Aucune donnée n'a été manipulée
+- Aucune donnée n'a été retirée
+- Aucune donnée n'a été résumée de quelque manière que ce soit
+
+Les données nettoyées
+---------------------
+Syn: tidy data
+tidy = rangé, ordonné, utilisable.
+messy, messiness = malpropre, désordre
+
+Les principes généraux des tidy data ont été énoncé par 
+[Hadley Wickham](http://had.co.nz/) 
+dans [ce document](http://vita.had.co.nz/papers/tidy-data.pdf) 
+et dans cette [vidéo](http://vimeo.com/33727555).
+
+Elles doivent respecter les principes suivants:
+
+1. chaque variable mesurée doit figurer dans une colonne et une seule
+2. Chaque observation différente d'une variable doit figurer sur une ligne différente 
+3. une table ne doit comporter qu'un "type" de variable
+1. Si plusieurs table sont nécessaires, elles doivent comporter une colonne commune qui permettent de les lier (link).
+
+Le nettoyage des données est parfait si les données peuvent être traitées directement par un logiciel statistique. Un exemple de tidy data sont celles prêtes à l'emploi, que l'on trouve dans les ouvrages de statistique.
+
+Le lexiqe (code book)
+---------------------
+Les mesures qui sont faites devront être décrites avec plus de détail que ce qui figure  dans la feuille de calcul . Le lexique contient ces informations . Au minimum, il devrait contenir :
+
+- Informations sur les variables ( y compris les unités !) 
+- Informations sur les choix qui ont été faits (1 = homme, 2 = femme)
+- Informations sur le protocole de l'étude 
+- Comment a été conçue l'étude ?
+- Comment a été organisé la collecte de données
+- sont-ce les 20 premiers patients rencontrés dans la clinique ? 
+- les patients ont-ils été sélectionnés sur certaines caractéristiques comme l'âge ? 
+- Les traitements sont-ils attribués au hasard ?
+
+Le format habituel pour ce document est un fichier type taitement de texte (Libre Office, Word) . 
+Il devrait comporter deux sections intitulées:
+
+- « Conception de l'étude» qui décrit de façon détaillée la façon dont vous avez recueilli les données . 
+- « codage» qui décrit chaque variable et ses unités.
+
+Comment coder les variables
+---------------------------
+![taxonomie](../images/data_taxonomie.png)
+
+La division des types de données a été proposée en 1946 par le psychologue américain Stanley Smith Stevens
+[Stevens 1946](http://www.mpopa.ro/statistica_licenta/Stevens_Measurement.pdf). Accédé le 1/5/2015. Voir aussi [Level of measurement](http://en.wikipedia.org/wiki/Level_of_measurement).
+
+Dans une feuille de calcul, on peut distinguer quelques grandes catégories de données en fonction de leur nature [data type](http://en.wikipedia.org/wiki/Statistical_data_type):
+
+- Continues (quantitatives)
+- Discrète (qualitatives)
+  - Nominales (catégorielles: sexe)
+  - Ordinales (catégorielles ordonnées: échelle de Likert)
+  - Intervalles
+  - Ratio
+- Données manquantes
+- Données censurées
+
+variables continues
+Ce sont toute variable mesurée sur une échelle quantitative continue comme par exemple le poids mesuré en kg.
+
+Les variables catégorielles comprennent les variables ordinales et nominales.
+
+[variables ordinales](http://en.wikipedia.org/wiki/Ordinal_data) 
+sont des variables réparties en niveaux, en nombre limité  (< 100) 
+Ces niveaux sont ordonnés et l'ordre à un sens. (exemple une échelle de réponse (Likert): mauvais, passable, bon).
+
+variables nominales [Categorical data](http://en.wikipedia.org/wiki/Categorical_variable) sont des variables où il existe plusieurs catégories, mais qui ne sont pas ordonnées. L'exemple classique est le sexe: homme ou femme.
+
+données manquantes [Missing data](http://en.wikipedia.org/wiki/Missing_data) sont des données manquantes et irrécupérables. Elles sont codées avec le symbole NA (not avalaible).
+
+données censurées [Censored data](http://en.wikipedia.org/wiki/Censoring_(statistics\)) 
+sont des données manquantes mais ont sait pourquoi. 
+exemple classique:  un patient perdu de vue. 
+Ils doivent aussi être codés `NA` quand vous n'avez pas les données. Mais vous devriez également ajouter une nouvelle colonne à vos données appelé, "VariableNameCensored" qui devrait avoir des valeurs de `true` si censuré et `false` si pas. Dans le lexique, il faut expliquer pourquoi ces valeurs sont manquantes. Il est absolument essentiel de mentionner à l'analyste, si il y a une raison connue pour que ces  certaines données soient manquantes.
+
+On ne doit pas supprimer les valeurs manquantes
+
+Cette classification des variables n'a pas seulement un intérêt sémantique. La natured'une variable détermine le choix d'un indicateur ou d'un test. La moyenne n'est utilisable que pour les variables quantitatives alors que la médiane est le paramètre de référence pour une variable catégorielles. Il n'y a de corrélation qu'entre variables continues,alors que le test du Khi2 analyse la relation entre 2 caractères quantitatifs.
+
+Remarques:
+
+- En général éviter de coder variables catégorielles ou ordinales comme des nombres. Lorsque vous entrez la valeur pour le sexe, il devrait être «homme» ou «femme». Les valeurs ordinales dans le jeu de données doivent être "mauvais", "passable", "bon" plutot que 1, 2, 3.
+- Cela permettra:
+
+  - d'éviter les ambiguïtés potentielles (calculer un sexe moyen...)
+  - et aidera à identifier les erreurs de codage.
+- Les logiciels savent très bien manipuler ce type de données
 
 Organiser les fichiers
 ----------------------
@@ -127,6 +246,14 @@ Le nom du fichier se termine par .csv
 Il existe des variantes (tab,;)
 [http://fr.wikipedia.org/wiki/Comma-separated_values]
 Le format csv ne connait pas les formats multifeuilles (classeurs). haque feuillet du classeur devra être enregistré séparément.
+
+Le format csv est le moyen le plus sûr de conserver ses données. C'est un format universel que tous les systèmes connaissent aussi bien lecture qu'en écriture. En pratique tout tableur sait exporter ses données dans ce format et sait également importer des données au format csv (aller dans fichier/enregistrer sous). De la même manière, tous les logiciels de traitement statistique savent lire le format csv.
+
+Variantes:`
+
+- CSV comma separated variable
+- SSV semicolon separated variable
+- TSV tabulation separated variable
 
 Les tableurs
 ============
