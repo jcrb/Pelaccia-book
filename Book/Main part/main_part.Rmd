@@ -176,6 +176,24 @@ La gestion des données soulève les questions suivantes:
 - comment exploiter statistiquement mes données ?
 - comment s'inscrire dans une démarche de recherche reproductible ?
 
+En résumé:
+
+- Données brutes (raw data)
+  - Feuille de papier
+- Données non préparées (messy data)
+  - Données transcrites dans un tableur
+  - les entête de colonne contiennent des chiffres au lieu de lettres
+  - des variables multiples stockées dans la même colonne
+  - les variables sont stockées en lignes et en colonnes
+- Données nettoyées (tidy data)
+  - 1. chaque variable mesurée doit figurer dans une colonne
+  - 2. Chaque observation différente d'une variable doit figurer sur une ligne différente 
+- Le passage raw data ->tidy data entraine une altération des données. Il faut toujours fournir:
+
+  - Les données brutes (pour comprendre)
+  - Les données nettoyées (pour gagner du temps)
+  - La description du processus de nettoyage (quels compromis)
+
 Note book (code book)
 ---------------------
 
@@ -204,6 +222,37 @@ Règles:
 
 #### Nom de colonnes
 AgeAuDiagnostic plutôt que ADx ou tout autre abréviation incompréhensible pour une autre personne.
+
+- une seule ligne. 
+- Sert à stocker le nom opérationnel des colonnes. 
+Règles:
+ - le nom est succinct (5-10 caractères) mais suffisamment explicite
+- il ne doit pas contenir d'espace ou de caractères qui pourrait être mal interprété (,;/\)
+- préférer les majuscule ou le nom anglais pour éviter d'uiliser des caractères accentuée (firstname à la place de prénom)
+- remplacer les espace par des underscore (caractère 8)
+- pas de caractères accentués
+- ne pas fusionner les cellules: la plupart des logiciels utilisent la première ligne pour déterminer le nombre de colonnes du tableau. Si des cellules sont fusionnées, cela crée une incohérence et le plantage du système.
+- Encodage: UTF-8 
+
+Paragraphe sur l'encodage: [Linux magazine]()
+
+#### les mesures
+
+- toujours utiliser le point décimal (jamais la virgule)
+- une colonne ne peut contenir que des chiffres ou du texte, jamais des deux.
+- Le dates de préférence au format ISO:
+  - AAAA-MM-JJ  ex. 2014-02-06 
+  - AAAA-MM-JJ HH:MM:SS ex. 2014-02-06 10:25:36
+- Un logiciel ne sait pas distinguer les codes de couleur
+- Un logiciel gère très bien les lettres
+  - Non: 1, 1, 2, 2, 2, 0, 1, 2
+  - Oui: H, H, F, F, F, NA, H, F
+- Ne pas mélanger les majuscules et les minuscules
+  - Homme <> homme <> HOMME
+- Valeur manquante
+  - La déclarer explicitement (ne pas laisser de blanc)
+  - Ne pas utiliser le zero ou une valeur négative (-99)
+  - Valeur par défaut: NA (not avalaible). 
 
 #### les caractères interdits
 
