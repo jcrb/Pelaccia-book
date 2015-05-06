@@ -90,7 +90,7 @@ Elles doivent respecter les principes suivants:
 
 Le nettoyage des données est parfait si les données peuvent être traitées directement par un logiciel statistique. Un exemple de tidy data sont celles prêtes à l'emploi, que l'on trouve dans les ouvrages de statistique.
 
-Le lexiqe (code book)
+Le lexique (code book)
 ---------------------
 Les mesures qui sont faites devront être décrites avec plus de détail que ce qui figure  dans la feuille de calcul . Le lexique contient ces informations . Au minimum, il devrait contenir :
 
@@ -234,7 +234,7 @@ Règles:
 - ne pas fusionner les cellules: la plupart des logiciels utilisent la première ligne pour déterminer le nombre de colonnes du tableau. Si des cellules sont fusionnées, cela crée une incohérence et le plantage du système.
 - Encodage: UTF-8 
 
-Paragraphe sur l'encodage: [Linux magazine]()
+Paragraphe sur l'encodage: [Linux magazine]()Massicot Hervé. Démystifier les encodages. Linux pratique (2015), n°89, pp 70-76.
 
 #### les mesures
 
