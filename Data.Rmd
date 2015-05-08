@@ -76,7 +76,7 @@ Données ordonnées (Tidy data)
 -----------------------------
 Ce sont les tableaux de données que l'on touve dans les ouvrages de statistiques. Ils ont prêts à l'emploi, sans ereurs, sans données manquantes. Soumises à un logiciel de statistiques, elle produiront instantannément un résultat sans un arrêt intempestif du programme assorti de message d'erreur plus ou moins abscons.
 
-Les données brutes (Raw data) dans le monde réel sont souvent désordonnés et mal formatées (Messy data). En outre, il peut manquer de détails appropriés de l'étude. La correction des données natives peut être un exercice périlleux puisque les données brutes originales risque d'être écrasées et il n'y aurait aucun moyen de vérifier ce processus ou de récupérer des erreurs commises pendant cette phase. Une bonne pratique serait de conserver les données d'origine, et d'utiliser un script programmatique pour nettoyer, corriger les erreurs et sauvegarder cet ensemble de données nettoyées pour une analyse ultérieure.
+Les données brutes (Raw data) dans le monde réel sont souvent désordonnés et mal formatées (Messy data). En outre, il peut manquer de détails appropriés de l'étude. La correction des données natives peut être un exercice périlleux puisque les données brutes originales risquent d'être écrasées et il n'y aurait aucun moyen de vérifier ce processus ou de récupérer des erreurs commises pendant cette phase. Une bonne pratique serait de conserver les données d'origine, et d'utiliser un script programmatique pour nettoyer, corriger les erreurs et sauvegarder cet ensemble de données nettoyées pour une analyse ultérieure.
 
 Question: combien de variable dans le tableau suivant:
 
@@ -729,7 +729,7 @@ Alternatives
 Divers
 ======
 
-[Anatomie d'une table](http://www.datakind.org/blog/whats-in-a-table/)
+[Anatomie d'une table](http://www.datakind.org/blog/whats-in-a-table/)accédé le 1/3/2015.
 
 [Primer on Data Management: What you always wanted to know](https://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf)
 

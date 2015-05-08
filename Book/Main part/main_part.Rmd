@@ -270,7 +270,8 @@ Astuces
 
 - chercher/remplacer
 
-Petite classification des variables
+Petite classification des variables:
+
 - Toutes les variables
 - qualitative ou Variable factorielle (sexe, parité) divisées en catégories (levels) mutuellent exclusif
   - nominales (l'ordre n'a pas de sens): sexe, CSP, binaires (fumeur ou non)

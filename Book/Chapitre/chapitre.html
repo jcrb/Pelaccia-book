@@ -69,7 +69,7 @@ img {
 <div id="TOC">
 <ul>
 <li><a href="#quand-utiliser-une-demarche-quantitative"><span class="toc-section-number">1</span> Quand utiliser une démarche quantitative ?</a></li>
-<li><a href="#organisation"><span class="toc-section-number">2</span> Organisation</a></li>
+<li><a href="#organiser-son-travail"><span class="toc-section-number">2</span> Organiser son travail</a></li>
 <li><a href="#organiser-la-collecte-des-donnees"><span class="toc-section-number">3</span> Organiser la collecte des données</a><ul>
 <li><a href="#quels-outils"><span class="toc-section-number">3.1</span> Quels outils ?</a></li>
 <li><a href="#comment-faire-communiquer-le-tableur-et-le-logiciel-de-statistiques"><span class="toc-section-number">3.2</span> Comment faire communiquer le tableur et le logiciel de statistiques ?</a></li>
@@ -92,7 +92,9 @@ img {
 <li><a href="#cycle-de-vie-des-donnees-3"><span class="toc-section-number">5.2</span> Cycle de vie des données [3]</a></li>
 <li><a href="#nettoyer-les-donnees-5"><span class="toc-section-number">5.3</span> NETTOYER LES DONNÉES [5]</a></li>
 </ul></li>
-<li><a href="#les-etapes-de-lanalyse-statistique"><span class="toc-section-number">6</span> Les étapes de l’analyse statistique</a></li>
+<li><a href="#organiser-le-controle-de-versions"><span class="toc-section-number">6</span> Organiser le contrôle de versions</a></li>
+<li><a href="#le-note-book"><span class="toc-section-number">7</span> Le Note Book</a></li>
+<li><a href="#les-etapes-de-lanalyse-statistique"><span class="toc-section-number">8</span> Les étapes de l’analyse statistique</a></li>
 </ul>
 </div>
 
@@ -102,15 +104,16 @@ img {
 <p>inférence: estimer les paramètres d’une population à partir d’un échantillon. La précision de l’estimation dépend de la taille de l’échantillon. Inversement, si on fixe la précision souhaitée on peut déterminer la taille l’échantillon. D’une manière générale, pour doubler la précision (c’est à dire diviser par 2 l’intervalle dans lequel se trouve le paramètre d’intérêt), il faut quadrupler la taille de l’échantillon.</p>
 <p>modélisation: c’est trouver la meilleure combinaison possible de plusieurs variables pour prédire le comportement d’une variable d’intérêt. Par exemple quelle sont les chances qu’une personne se plaignant d’une douleur thoracique soit porteuse d’une pathologie coronarienne sachant que l’on a mesuré chez elle un certain nombre de variables (sexe, age, poids, taux de cholestérol, etc.) dont on a montré préalablement (par les méthodes statistiques précédentes) qu’elles avaient un lien avec la pathologie suspectée. Il existe de nombreuses techniques de modélisation. L’une des plus répandue est le modèle linéaire.</p>
 </div>
-<div id="organisation" class="section level1">
-<h1><span class="header-section-number">2</span> Organisation</h1>
+<div id="organiser-son-travail" class="section level1">
+<h1><span class="header-section-number">2</span> Organiser son travail</h1>
+<p>Stafford Noble W. <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424">A quick Guide to Organizing Computational Biology Projects</a>. PLOS Comp. Biol. (2009) <strong>5</strong>(7). Accédé le 10/2/2015.</p>
 <p>Un travail de recherche peut se résumer à l’équation suivante:</p>
 <pre><code>Question de recherche + données + analyse (statistique) + publication</code></pre>
 <p>Le présent chapitre essaie de répondre aux questions suivantes: - pourquoi la collecte des données est une étape clé du travail de recherche - comment la qualité du recueil doit s’inscrire dans la philosophie de la recherche reproductible (<em>reproductible resarch</em>). - quelles sont les étapes du traitement des données pour qu’elles soient utilisables par le statisticien - comment choisir et organiser le support de recueil des données.</p>
 <p>Les données (data) sont le corollaire indissociable de tout travail de recherche. Elle peuvent exister avant de poser la question de recherche (travail rétrospectif) ou apparaître après que la question soit posée (travail prospectif). La nature et la pertinence des données à recueillir relève de la QR. On s’intéresse ici à la gestion de ces données en vue de leur exploitation statistique. C’est un étape cruciale pour deux raisons:</p>
 <ul>
 <li>80% du temps nécessaire au traitement des données consiste à les rendre “présentables”, c’est à dire prêtes à être “moulinées” par un logiciel de statistique. Plus on est pressé plus cette organisation des données est importante [ref. Wickham].</li>
-<li>une bonne organisation des données permet à un observateur extérieur de comprendre comment le travail s’est construit et au chercheur de reprendre son travail plusieurs mois ou année plus tard sans se demander comment il a pu obtenir ces résultats. Cette attitude “écologique” connait un développement important actuellement sous le nom de “reproductible research”. C’est aussi un moyen de contrôler la fraude scientifique.</li>
+<li>une bonne organisation des données permet à un observateur extérieur de comprendre comment le travail s’est construit et au chercheur de reprendre son travail plusieurs mois ou année plus tard sans se demander comment il a pu obtenir ces résultats. Cette attitude “écologique” connait un développement important actuellement sous le nom de “reproductible research”. C’est aussi un moyen de contrôler la fraude scientifique <a href="http://simplystatistics.org/2013/12/16/a-summary-of-the-evidence-that-most-published-research-is-false/">A summary of the evidence that most published research is false</a>.</li>
 </ul>
 <p>En pratique il faut disposer de trois outils:</p>
 <ul>
@@ -127,7 +130,7 @@ img {
 <ul>
 <li><strong>le tableur</strong> (libre Office, Excel) est parfait pour saisir les données, les organiser, les corriger rapidement ou les compléter. Par contre il est incapable d’assurer la traçabilité des opérations. C’est souvent un outil statistique rudimentaire. Au final on aboutit à une grande feuille de calcul où se mélangent données désorganisées (pour une exploitation statistique), tableaux intermédiaires, graphiques, macros. Cet ensemble inextricable est incompréhensible pour le statisticien et génère de grands retard dans la production de résultats. La reprise d’un tel tableau plus tard est souvent impossible même pour son auteur…</li>
 <li><strong>le logiciel de statistique</strong> permet d’organiser les données pour les rendre exploitables statistiquement. Par contre ce sont des outils lourds où la saisie des données brutes est nettement moins intuitive et rapide comparée à un tableur.</li>
-<li>le <strong>bon choix</strong> est d’utiliser les qualités des deux: un tableur simple pour saisir les données, un logiciel statistique pour les exploiter.</li>
+<li>le <strong>bon choix</strong> est d’utiliser les qualités des deux: un tableur simple pour saisir les données, un logiciel statistique pour les exploiter <a href="http://http://www.quantumforest.com/2013/12/excel-fanaticism-and-r/">Luis A. Apiolaza</a>.</li>
 </ul>
 </div>
 <div id="comment-faire-communiquer-le-tableur-et-le-logiciel-de-statistiques" class="section level2">
@@ -367,8 +370,20 @@ img {
 <p>2 remarques: - ces trois étapes doivent faire l’objet de trois fichiers distincts afin de pouvoir revenir en arrière en cas de problème. - toutes les étapes doivent être documentées pour comprendre quelles manipulations ou transformations ont été néccessaires pour passer de l’une à l’autre</p>
 </div>
 </div>
+<div id="organiser-le-controle-de-versions" class="section level1">
+<h1><span class="header-section-number">6</span> Organiser le contrôle de versions</h1>
+<p>La <a href="http://fr.wikipedia.org/wiki/Gestion_de_versions">gestion de versions</a> est une technique qui permet de sauvegarder les différentes étapes de son travail. Un des outils les plus utilisé est <strong><a href="http://fr.wikipedia.org/wiki/Git">git</a></strong> (<a href="http://git-scm.com/book/fr/">Git en français</a>). Disponible sur toutesles plateforme, c’est un logiciel libre et gratuit, qui permet d’enregister un ensemble de fichiers (tableur, doc, pdf, etc.) avec un numéro de version horodaté. Git permet de retrouver toutes les versions d’un fichier et d’indiquer quelles sont les modifications apportées entre deux versions. Il est ainsi possible de retourner à une version antérieure en cas d’erreur, de développer une branche parralèle puis de de fusinner avec la branche principale. De ce fait il est très bien adapté au travail d’équipe, chacun pouvant développer une branche du projet avant de fusionner. Git peut être hébergé sur une machine locale et/ou être synchronisé avec un dépot dans le cloud (<a href="http://fr.wikipedia.org/wiki/GitHub">Github</a>, <a href="http://en.wikipedia.org/wiki/Bitbucket">Bitbucket</a>)</p>
+</div>
+<div id="le-note-book" class="section level1">
+<h1><span class="header-section-number">7</span> Le Note Book</h1>
+<p>C’est le carnet de laboratoire de l’analyste. Le format habituel pour ce document est un fichier type taitement de texte (Libre Office, Word) . Il devrait comporter deux sections intitulées:</p>
+<ul>
+<li>« Conception de l’étude» qui décrit de façon détaillée la façon dont vous avez recueilli les données et ce vous voulez en faire.</li>
+<li>« codage» (dictionnaire, lexique) qui décrit chaque variable et ses unités. Par exemple la variable sexe est codée “H” ou “F”, ou bien homme = 1, femme = 2.</li>
+</ul>
+</div>
 <div id="les-etapes-de-lanalyse-statistique" class="section level1">
-<h1><span class="header-section-number">6</span> Les étapes de l’analyse statistique</h1>
+<h1><span class="header-section-number">8</span> Les étapes de l’analyse statistique</h1>
 <p>C’est la question de recherche qui va dicter la profondeur de l’analyse statistique. Par ordre de complexité croissante, on peut la décrire ainsi:</p>
 <ul>
 <li><p>statistique descriptive: il s’agit de décrire les données au travers de quelques chiffres qui les résument:</p></li>
