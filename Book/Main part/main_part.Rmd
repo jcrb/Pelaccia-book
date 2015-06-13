@@ -29,15 +29,18 @@ Les étapes de l'analyse statistique:
 sigma $\sigma, \mu, \sigma^2$
 
 
-Les données (data) sont le corolaire indiscociable de tout travail de recherche. Elle peuvent exister avant de poser la question de recherche (travail rétrospectif) ou apparaitre après que la question soit poseé (travail prospectif). La nature et la pertinence des données à recueillir relève de la QR. On s'intéresse ici à la gestion de ces données en vue de leur expoitation statitique. C'est un étape crutiale pour deux raisons:
+Les données (data) sont le corolaire indiscociable de tout travail de recherche. Donnée: Point sur lequel on fonde un raisonnement, suppositions, constatations, probabilités, qui, étant indiscutables ou indiscutées, servent de base à une recherche, à un examen quelconque[wiktionnaire](http://fr.wiktionary.org/wiki/donn%C3%A9e). Elle peuvent exister avant de poser la question de recherche (travail rétrospectif) ou apparaitre après que la question soit poseé (travail prospectif). La nature et la pertinence des données à recueillir relève de la QR. On s'intéresse ici à la gestion de ces données en vue de leur expoitation statistique. C'est un étape crutiale pour deux raisons:
 
-- 80% du temps nécessaire au traitement des données consiste à les rendre "présentables", c'est à dire prêtes à être "moulinées" par un logiciel de statistique. Plus on est pressé plues cette organisation des données est importante.
+- 80% du temps consacré à un travail scientifique est consacré à la préparation des données [ref.]. Préparer des données consiste à les rendre "présentables", c'est à dire prêtes à être "moulinées" par un logiciel de statistique. Plus on est pressé plues cette organisation des données est importante. Le traitement statistique des données est le principal frein à une production rapide de résultats.
+
 - une bonne organisation des données permet à un observateur extérieur de comprendre comment le travail s'est construit et au chercheur de reprendre son travail plusieurs mois ou année plus tard sans se demander comment il a pu obtenir ces résultats. Cette attitude "écologique" connait un développement important actuellement sous le nom de "reproductible research". C'est aussi un moyen de contrôler la faude scientifique.
 
 En pratique il faut disposer de trois outils
-- un tableur pour saisir les données et faire un premier nettoyage des données.
+- un tableur pour saisir les données brutes, conserver les données nettoyées. Le tableur ne doit servir qu'à cela. En particulier il ne doit comporter ni calculs dérivés, ni graphiques. Tous ces éléments vont rendre impossible l'utilisation de votre fichier par un logiciel statistique. De plus, au bout de quelque temps vous ne saurez plus à quoi correspondent les calculs ni comment vous avez fait pour produire un graphique. 
 - un logiciel de statistiques pour exploiter les données.
 - un traitement de texte qui à la manière d'un cahier de laboratoire permettra de conserver une trace de toutes les opérations effectuées sur les données.
+
+Chaque fois que c'est possible utilisez des outils simples, universels (c'est à dire fonctionnant sur les trois principales plate-formes: Windows, Apple et Linux) et qui utilisent des formats de stockage non propriétaires. Les formats non propriétaires ont une garantie de pérénité dans le temps alors que les format propriétaire sont à la merci d'un chagement de version ou de disparition du logiciel.
 
 Organiser les fichiers
 ----------------------
