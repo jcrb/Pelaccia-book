@@ -19,11 +19,16 @@ Le présent chapitre s'intéresse au point 2 et très partiellement au point 3.
 
 Les étapes de l'analyse statistique:
 
-- statistique descriptive: il s'agit de décrire les données au travers de quelques chiffres qui les résument
-  - univariée: moyenne, médiane, quantiles
-  - bivariée: covariance, corrélation, régression, comparaison de deux moyennes
-  - multivarié: ANOVA
-- statistique inférentielle: un travail porte toujours sur un échantillon que l'on espère aussi représentatif d'un population que l'on ne connaîtra probablement jamais. L'inférence rassemble les techniques statistiques qui permettent d'extrapoler les conclusins basées sur un échantillon à une population.
+- statistique descriptive: il s'agit de décrire les données au travers de quelques chiffres qui les résument et sans aller plus loin dans l'interprétation:
+
+    - univariée: moyenne, médiane, quantiles
+    - bivariée: covariance, corrélation, régression, comparaison de deux moyennes
+    - multivarié: ANOVA
+- statistique exploratoire: elles'appuie sur l'étape précédente pour mettre en évidence des tendances, corrélations ou des relations entre les varables pour générer des hypotèses 
+- statistique inférentielle: un travail porte toujours sur un échantillon que l'on espère aussi représentatif d'un population que l'on ne connaîtra probablement jamais. L'inférence rassemble les techniques statistiques qui permettent d'extrapoler les conclusions basées sur un échantillon à une population. C'est la forme de statistique la plus souvent observée dans la littérature scientifique [Jeff Leeks. The elements of data analytic style. A guide for peope who want to analyze data.2015. Leanpub ed.]
+
+- statistique prédictive: tandis que l'analyse inférentielle quantifie les relations entre des mesures à l'échelle d'une population, l'analyse préditictive utilise un sous-ensemble des données pour prédire d'autres mesures sur le même ensemble (ex. sondages d'opinion)
+- statistique causale essaie de pévoir quelles sont les conséquences dela modification d'une variable sur les autres variables. C'est le cas des essais cliniques randomisés: influence de l'arrêt du tabac sur la survie. A la différence des méthodesinférentielles ou prédictives, lesméthodes causales identifient l'importortance et le sens des relations entre variables.
 - modeélisation
 
 sigma $\sigma, \mu, \sigma^2$
