@@ -14,7 +14,7 @@ output:
 Quand utiliser une démarche quantitative ?
 ==========================================
 
-La recherche qualitative s'intéresse aux données mesurables sur lesquelles on peut appliquer des méthodes statistiques pour les décrire, les comparer, les inférer (Tirer une conclusion d’une proposition ou d’un fait, etc. [wikitionnaire](http://fr.wiktionary.org/wiki/inf%C3%A9rer)) ou les modéliser.
+La recherche quantitative s'intéresse aux données mesurables sur lesquelles on peut appliquer des méthodes statistiques pour les décrire, les comparer, les inférer (Tirer une conclusion d’une proposition ou d’un fait, etc. [wikitionnaire](http://fr.wiktionary.org/wiki/inf%C3%A9rer)) ou les modéliser.
 
 Habituellement les travaux de recherche quantitative se répartissent en deux grandes catégories [N.Radziwill. Statistics with R. 2ème ed. 2015]:
 
